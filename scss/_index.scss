@@ -1,0 +1,128 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes down {
+  0% {
+    background-position: 300px 20px,400px 100px,200px 200px,100px 100px,50px 50px,300px 300px,0 0;
+  }
+  100% {
+    background-position: -100px 300px,-200px 200px,-100px 500px,-200px 200px,-150px 150px,-600px 600px,0 0;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-image: url("http://dummyimage.com/2000x4000/000/fff");
+  background-size: cover;
+
+  &.down{
+    background-image:
+    url('http://dummyimage.com/100x20/FFDAB9/fff'),
+    url('http://dummyimage.com/100x20/FFC125/fff'),
+    url('http://dummyimage.com/100x20/FFA500/fff'),
+    url('http://dummyimage.com/100x20/FF6A6A/fff'),
+    url('http://dummyimage.com/100x20/FF8C69/fff'),
+    url('http://dummyimage.com/100x20/FAFAD2/fff'),
+    url('http://dummyimage.com/2000x4000/000/fff');
+    background-repeat: no-repeat;
+    background-position: 300px 20px,400px 100px,200px 200px,100px 100px,50px 50px,300px 300px,0 0;
+    background-size: 100px 20px,100px 20px,100px 20px,100px 20px,100px 20px,100px 20px,cover;
+    animation: down 4s linear 1s infinite;
+  }
+}
+
+
+
+.table {
+  width: 90%;
+  margin: 10px auto;
+  transition: margin 2s;
+}
+
+.row {
+  transition: margin 2s;
+  // margin: 30px 0;
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.cell {
+  float: left;
+  position: relative;
+  width: 30%;
+  height: 0;
+  padding-top: 30%;
+  background-image: url("http://dummyimage.com/300x300/aaa/fff");
+  background-size: cover;
+  transition: transform 2s;
+
+  &.rotate {
+    transform: rotateY(180deg);
+  }
+
+  &.trans{
+    transition: transform 1s;
+  }
+
+  &:not(:first-child) {
+    margin-left: 5%;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+}
+
+.start{
+  width: 30%;
+  height: 0;
+  padding-top: 30%;
+  background-image: url("http://dummyimage.com/300x300/e42f34/fff");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.intro{
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  background-color: rgba(100,100,100,.6);
+  color: #fff;
+  text-align: center;
+
+  &:before{
+    content: '游戏说明';
+    display: block;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 30px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    transform: translateX(-50%);
+    background-color: rgba(100,100,100,.6);
+  }
+}
